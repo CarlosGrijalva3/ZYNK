@@ -1,0 +1,186 @@
+/* ========================= */
+/* 🔥 FONDO */
+/* ========================= */
+body {
+  background: url('../imgs/wall6.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+}
+
+/* ========================= */
+/* 🔥 NAV (igual que home) */
+/* ========================= */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 115px;
+
+  background: #e58aa8;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+  z-index: 1000;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+/* espacio del nav */
+.espacio-nav {
+  height: 100px;
+}
+
+
+.icon {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+
+  /* 🔥 suavidad */
+  transition: all 0.2s ease;
+}
+
+/* 🌸 efecto igual que home */
+.icon:hover {
+  filter: drop-shadow(0 0 2px #f272a1);
+  transform: scale(1.05);
+}
+
+/* 👆 click */
+.icon:active {
+  transform: scale(0.95);
+}
+
+
+/* ========================= */
+/* 🔥 PERFIL */
+/* ========================= */
+.perfil-card {
+  /*background: rgba(255, 255, 255, 0.85);*/
+  padding: 25px;
+  border-radius: 15px;
+
+  width: 280px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  /*box-shadow: 0 10px 25px rgba(0,0,0,0.15);*/
+
+  backdrop-filter: blur(5px);
+}
+
+
+
+.bienvenida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  gap: 5px;
+}
+
+.titulo {
+  font-size: 16px;
+  font-family: 'caviar_dreams';
+  color: gray;
+}
+
+.nombre {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Lexend';
+  color: #e58aa8;
+}
+
+/* logout */
+.logout a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #e58aa8;
+  padding: 10px 20px;
+  border-radius: 8px;
+
+  font-family: 'Lexend';
+  text-decoration: none;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+}
+
+/* texto REAL arriba */
+.logout a span {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* fondo animado */
+.logout a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 0%;
+  height: 100%;
+
+  background: #f272a1;
+
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+}
+
+/* hover */
+.logout a:hover::after {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+/* ========================= */
+/* 🔥 FUENTES */
+/* ========================= */
+@font-face {
+  font-family: 'Lexend';
+  src: url('../fonts/Lexend/static/Lexend-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'lemon_milk';
+  src: url('../fonts/lemon_milk/LEMONMILK-Regular.otf') format('truetype');
+}
+@font-face {
+  font-family: 'kg_red_hands';
+  src: url('../fonts/kg_red_hands/KGRedHands.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'caviar_dreams';
+  src: url('../fonts/caviar_dreams/CaviarDreams_Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'simply_olive';
+  src: url('../fonts/simply_olive/Simply_Olive_DEMO.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'kg_perfect_penmanship';
+  src: url('../fonts/kg_perfect_penmanship/KGPerfectPenmanship.ttf') format('truetype');
+}

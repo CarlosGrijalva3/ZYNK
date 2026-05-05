@@ -1,0 +1,586 @@
+/* ========================= */
+/* 🔥 FONDO GENERAL */
+/* ========================= */
+body {
+  background: url('../imgs/wall6.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding-bottom: 80px;
+}
+
+/* SOLO links normales (no nav) */
+body > a {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+}
+
+/* logout */
+.logout {
+  text-align: center;
+  margin: 10px;
+}
+
+/* ========================= */
+/* 🔥 NAV FIJO */
+/* ========================= */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 115px; 
+
+  background: #e58aa8;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+  z-index: 1000;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  padding: 0; /* 👈 sin espacio clickeable */
+}
+
+/*ESPACIO BACION*/
+.espacio-nav {
+  height: 100px; /* 👈 ajusta según tu nav */
+}
+
+
+/* bienvenida */
+.bienvenida {
+  text-align: center;
+  margin-top: 80px; /* 👈 para que no lo tape el nav */
+}
+
+/* ========================= */
+/* 🔥 BOTÓN FLOTANTE */
+/* ========================= */
+.btn-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 0;
+  padding: 25px;
+  border-radius: 50%;
+  background: #EFABC0;
+  border: none;
+  cursor: pointer;
+
+  /* 🔥 animación suave */
+  transition: all 0.6s ease;
+
+  /* opcional sombra */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 🖱️ hover */
+.btn-float:hover {
+  transform: scale(1.05);
+  background: #e96b93;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* 👆 click */
+.btn-float:active {
+  transform: scale(0.95);
+}
+/* ========================= */
+/* 🔥 MODAL */
+/* ========================= */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+    
+  background: url('../imgs/wall9.png') no-repeat center center;
+  background-size: cover;
+
+  /*background: #C9E2F2;*/
+  padding: 30px;
+  width: 350px;
+  border-radius: 10px;
+  animation: aparecer 0.2s ease;
+}
+
+@keyframes aparecer {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* texto modal */
+.modal-content h3 {
+  font-size: 26px;
+  line-height: 0.09;
+  color: #eff0f1;
+  font-family: 'lemon_milk';
+
+}
+
+/* ========================= */
+/* ✏️ TEXTO GRANDE (¿Qué estás pensando?) */
+/* ========================= */
+.modal-content textarea {
+  width: 95%;
+  height: 100px; /* 👈 más grande */
+  margin-top: 10px;
+  padding: 10px;
+
+  border-radius: 10px;
+  border: 2px solid #cae4ef;
+
+  font-family: 'Lexend';
+  font-size: 15px;
+  color: #e58aa8;
+
+  resize: none;
+}
+
+/* ========================= */
+/* 🏷️ INPUT PEQUEÑO (tags) */
+/* ========================= */
+.modal-content input {
+  width: 56%;
+  margin-top: 10px;
+  padding: 6px;
+
+  border-radius: 8px;
+  border: 2px solid #c9e2f2;
+
+  font-family: 'Lexend';
+  font-size: 13px;
+  color: #efabc0;
+}
+
+/* ========================= */
+/* 🔥 EFECTO AL HACER CLICK */
+/* ========================= */
+.modal-content textarea,
+.modal-content input {
+  transition: all 0.3s ease;
+}
+
+.modal-content textarea:focus,
+.modal-content input:focus {
+  border-color: #f272a1;
+  box-shadow: 0 0 10px rgba(242,114,161,0.6);
+  transform: scale(1.02);
+   outline: none;
+}
+
+/* botón publicar */
+.modal-content button {
+  margin-top: 7px;
+  padding: 10px;
+  width: 120px;
+  border: none;
+  border-radius: 8px;
+
+  background: #cfaef1;
+  color: #ffffff;
+
+  cursor: pointer;
+  float: right;
+  font-family: 'caviar_dreams';
+
+  /* 🔥 clave */
+  transition: all 0.3s ease;
+}
+
+.modal-content button {
+  transition: transform 0.2s ease;
+}
+
+/* animación pop */
+.modal-content button:hover {
+    animation: pop 0.3s ease;
+      background: #a359ee; /* 👈 más oscuro */
+  box-shadow: 0 0 10px #f272a1;
+}
+
+/* keyframes */
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.1); }
+  70%  { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+/* cerrar */
+.cerrar {
+  float: right;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* 🔥 POSTS */
+/* ========================= */
+.contenedor-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  background: #eff0f1; /*#E8ECEC*/
+  width: 360px;
+  padding: 15px;
+  margin: 15px;
+
+  border: 6px solid pink;
+  border-radius: 10px;
+
+  box-shadow: 
+    0 5px 10px rgba(0,0,0,0.2),
+    0 0 0 2px pink inset;
+}
+
+/* header */
+.post-header {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.post-header div {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-header small {
+  color: gray;
+}
+
+/* eliminar */
+.delete-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+/* footer */
+.post-footer {
+  display: flex;
+  align-items: center;
+}
+
+.tags {
+  flex: 1;
+}
+
+.like-btn {
+  margin-left: auto;
+  text-decoration: none;
+  color: black;
+}
+@keyframes likePop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.like-btn img {
+  transition: transform 0.2s ease;
+}
+
+/* click */
+.like-btn:active img {
+  animation: likePop 0.4s ease;
+}
+
+
+
+
+/* ========================= */
+/* 🔥 EDITAR */
+/* ========================= */
+.edit-container {
+  background: #cfaef1;
+  border: 2px solid #cfaef1;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.edit-box {
+  width: 95%;
+  height: 80px;
+  border-radius: 8px;
+
+  font-family: 'Mv_boli';
+  font-size: 14px;
+  color: #7e4bb3;
+
+  border: 2px solid #cfaef1;
+  padding: 8px;
+  resize: none;
+  outline: none;
+}
+
+.edit-box {
+  transition: all 0.3s ease;
+}
+
+.edit-box:focus {
+  outline: none;
+  border-color: #f272a1;
+  box-shadow: 0 0 10px rgba(242,114,161,0.6);
+  transform: scale(1.02);
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+/* ========================= */
+/* 🔥 BOTONES EDITAR (BOUNCE TO TOP) */
+/* ========================= */
+
+.btn-save,
+.btn-cancel {
+  position: relative;
+  overflow: hidden;
+
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  color: white;
+
+  transition: color 0.3s ease;
+}
+
+/* capa animada */
+.btn-save::before,
+.btn-cancel::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 0%;
+
+  z-index: 0;
+
+  transition: height 0.9s cubic-bezier(.34,1.56,.64,1); /* 👈 efecto bounce */
+}
+
+/* texto arriba */
+.btn-save span,
+.btn-cancel span {
+  position: relative;
+  z-index: 0.01;
+}
+
+/* colores base */
+.btn-save {
+  background: #EFABC0;
+}
+
+.btn-cancel {
+  background: #be7fff;
+}
+
+/* colores del efecto */
+.btn-save::before {
+  background: #ff6b99;
+}
+
+.btn-cancel::before {
+  background: #7e4bb3;
+}
+
+/* 🔥 animación */
+.btn-save:hover::before,
+.btn-cancel:hover::before {
+  height: 29%;
+}
+
+/* 👆 pequeño movimiento */
+.btn-save:hover,
+.btn-cancel:hover {
+  transform: translateY(-2px);
+}
+
+/* click */
+.btn-save:active,
+.btn-cancel:active {
+  transform: scale(0.95);
+}
+
+
+/*
+.btn-save {
+  background: #EFABC0;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn-save:hover {
+  background: #ff6b99;
+}
+
+.btn-cancel {
+  background: #be7fff;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn-cancel:hover {
+  background: #7e4bb3;
+}
+*/
+
+/* ========================= */
+/* 🔥 ICONOS */
+/* ========================= */
+.icon {
+  width: 55px;  height: 55px; 
+
+  cursor: pointer;
+}
+
+.icon-btn {
+  width: 25px;
+}
+
+.icon-small {
+  width: 18px;
+  /*vertical-align: middle;*/
+}
+
+.icon,
+.icon-small {
+  transition: all 0.2s ease;
+}
+
+.icon:hover,
+.icon-small:hover {
+  filter: drop-shadow(0 0 5px #f272a1);
+  transform: scale(1.05);
+}
+
+/* editar icono */
+.edit-inline {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.edit-inline img {
+  transition: transform 0.01s ease;
+}
+
+/* ✏️ animación lápiz */
+.edit-inline:hover img {
+  animation: escribir 0.4s ease;
+}
+
+@keyframes escribir {
+  0%   { transform: rotate(0deg) translateX(0); }
+  25%  { transform: rotate(-15deg) translateX(2px); }
+  50%  { transform: rotate(10deg) translateX(-2px); }
+  75%  { transform: rotate(-10deg) translateX(2px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+
+/* ========================= */
+/* 🔥 FUENTES */
+/* ========================= */
+@font-face {
+  font-family: 'Lexend';
+  src: url('../fonts/Lexend/static/Lexend-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mv_boli';
+  src: url('../fonts/MV_Boli/mvboli.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'lemon_milk';
+  src: url('../fonts/lemon_milk/LEMONMILK-Regular.otf') format('truetype');
+}
+@font-face {
+  font-family: 'kg_red_hands';
+  src: url('../fonts/kg_red_hands/KGRedHands.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'caviar_dreams';
+  src: url('../fonts/caviar_dreams/CaviarDreams_Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'simply_olive';
+  src: url('../fonts/simply_olive/Simply_Olive_DEMO.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'kg_perfect_penmanship';
+  src: url('../fonts/kg_perfect_penmanship/KGPerfectPenmanship.ttf') format('truetype');
+}
+
+
+
+/* Nombre */
+.post-header strong {
+  font-family: 'Lexend';
+  font-size: 14px;
+  color: gray;
+}
+
+/* Fecha */
+.post-header small {
+  font-family: 'Lexend';
+  font-size: 12px;
+  color: gray;
+}
+
+/* Texto */
+.post p {
+  font-family: 'caviar_dreams';
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Tags */
+.tags {
+  font-family: 'Mv_boli';
+  font-size: 13px;
+  color: #EFABC0;
+}
